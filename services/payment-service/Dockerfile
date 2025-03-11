@@ -12,13 +12,13 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Run the application using a JRE
-FROM openjdk:17-jre-slim
+FROM openjdk:17-jdk-slim
 
 # Set the working directory
 WORKDIR /app
 
 # Copy the jar file from the build stage to the container
-COPY --from=builder /app/target/payment-service-1.0.0.jar /app/payment-service.jar
+COPY --from=builder /app/target/payment-service-0.0.1-SNAPSHOT.jar /app/payment-service.jar
 
 # Set the command to run the application
 ENTRYPOINT ["java", "-jar", "/app/payment-service.jar"]
