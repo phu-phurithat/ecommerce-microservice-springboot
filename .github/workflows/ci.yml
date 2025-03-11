@@ -48,5 +48,8 @@ jobs:
       - name: Build Docker image for ${{ matrix.service }}
         run: docker build -t ecommerce-${{ matrix.service }} ./services/${{ matrix.service }}
 
+      - name: Tag Docker image for ${{ matrix.service }}
+        run: docker tag ecommerce-${{ matrix.service }} phuphurithat/ecommerce:${{ matrix.service }}
+
       - name: Push Docker ${{ matrix.service }} image to registry
-        run: docker push phuphurithat/phuphurithat/ecommerce:ecommerce-${{ matrix.service }}
+        run: docker push phuphurithat/ecommerce:${{ matrix.service }}
