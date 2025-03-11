@@ -49,4 +49,4 @@ jobs:
         run: docker build -t ecommerce-${{ matrix.service }} ./services/${{ matrix.service }}
 
       - name: Push Docker ${{ matrix.service }} image to registry
-        run: docker push phuphurithat/ecommerce:latest
+        run: docker push phuphurithat/ecommerce:${{ matrix.service }}-latest
