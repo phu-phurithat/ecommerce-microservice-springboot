@@ -18,7 +18,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the jar file from the build stage to the container
-COPY --from=builder /app/target/config-server-1.0.0.jar /app/config-server.jar
+COPY --from=builder /app/target/config-server-0.0.1-SNAPSHOT.jar /app/config-server.jar
 
 # Set the command to run the application
 ENTRYPOINT ["java", "-jar", "/app/config-server.jar"]
