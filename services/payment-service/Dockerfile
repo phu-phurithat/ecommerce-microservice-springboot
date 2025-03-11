@@ -1,15 +1,24 @@
-# Stage 1: Build Phase
-FROM maven:3.9.5-eclipse-temurin-23 AS build
+# Stage 1: Build the application using Maven
+FROM maven:3.8.4-openjdk-17-slim as builder
+
+# Set the working directory
 WORKDIR /app
+
+# Copy the pom.xml and the source code to the container
 COPY pom.xml .
-RUN mvn dependency:go-offline
 COPY src ./src
+
+# Build the application (skip tests in this case)
 RUN mvn clean package -DskipTests
 
-# Stage 2: Runtime Phase
-FROM eclipse-temurin:23-jdk-alpine
+# Stage 2: Run the application using a JRE
+FROM openjdk:17-jre-slim
+
+# Set the working directory
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-USER appuser
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# Copy the jar file from the build stage to the container
+COPY --from=builder /app/target/payment-service-1.0.0.jar /app/payment-service.jar
+
+# Set the command to run the application
+ENTRYPOINT ["java", "-jar", "/app/payment-service.jar"]

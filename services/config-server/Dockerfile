@@ -1,16 +1,24 @@
-FROM openjdk:23-jdk-slim
+# Stage 1: Build the application using Maven
+FROM maven:3.8.4-openjdk-17-slim as builder
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Create user
-RUN addgroup --system spring && adduser --system spring --ingroup spring
+# Copy the pom.xml and the source code to the container
+COPY pom.xml .
+COPY src ./src
 
-# Change to user
-USER spring:spring
+# Build the application (skip tests in this case)
+RUN mvn clean package -DskipTests
 
-COPY target/*.jar app.jar
+# Stage 2: Run the application using a JRE
+FROM openjdk:17-jre-slim
 
-EXPOSE 8888
+# Set the working directory
+WORKDIR /app
 
-CMD ["java", "-jar", "app.jar"]
+# Copy the jar file from the build stage to the container
+COPY --from=builder /app/target/config-server-1.0.0.jar /app/config-server.jar
+
+# Set the command to run the application
+ENTRYPOINT ["java", "-jar", "/app/config-server.jar"]
