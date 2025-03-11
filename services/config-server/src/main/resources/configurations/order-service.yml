@@ -27,7 +27,7 @@ spring:
         spring.json.trusted.packages: "*"
         spring.json.type.mapping: orderConfirmation:com.phu.order_service.kafka.OrderConfirmation
 server:
-  port: 8092
+  port: 0
 
 application:
   config:
