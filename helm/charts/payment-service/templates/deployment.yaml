@@ -15,5 +15,3 @@ spec:
       containers:
         - name: payment-service
           image: "phuphurithat/ecommerce:payment-service"
-          ports:
-            - containerPort: 0

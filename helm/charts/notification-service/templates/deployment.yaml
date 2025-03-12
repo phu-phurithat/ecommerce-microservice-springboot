@@ -15,5 +15,3 @@ spec:
       containers:
         - name: notification-service
           image: "phuphurithat/ecommerce:notification-service"
-          ports:
-            - containerPort: 0

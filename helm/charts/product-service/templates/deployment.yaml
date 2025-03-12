@@ -15,5 +15,3 @@ spec:
       containers:
         - name: product-service
           image: "phuphurithat/ecommerce:product-service"
-          ports:
-            - containerPort: 0

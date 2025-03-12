@@ -3,4 +3,3 @@ image:
   repository: phuphurithat/ecommerce
   tag: order-service
 service:
-  port: 0

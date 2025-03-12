@@ -15,5 +15,3 @@ spec:
       containers:
         - name: order-service
           image: "phuphurithat/ecommerce:order-service"
-          ports:
-            - containerPort: 0
