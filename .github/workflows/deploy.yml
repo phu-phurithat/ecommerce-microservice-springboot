@@ -28,11 +28,7 @@ jobs:
         run: |
           aws eks update-kubeconfig --name ${{ secrets.EKS_CLUSTER_NAME }} --region ${{ secrets.AWS_REGION }}
 
-      - name: Install Helm
-        uses: helm/kind-action@v1.0.0
-        with:
-          version: "v3.8.0"
-
       - name: Deploy using Helm
-        run: |
-          helm upgrade --install ecommerce-backend ./helm --namespace ecommerce
+        uses: WyriHaximus/github-action-helm3@v3
+        with:
+          exec: helm upgrade --install ecommerce-backend ./helm --namespace ecommerce
