@@ -1,5 +1,5 @@
 apiVersion: v2
-name: ecommerce-app
+name: ecommerce-backend
 description: A Helm chart for deploying the eCommerce microservices on Kubernetes
 version: 0.1.0
 appVersion: "1.0"
@@ -8,7 +8,7 @@ maintainers:
     email: phurithat.komkham@gmail.com
     home: https://github.com/phu-phurithat/ecommerce-microservice-springboot/
 sources:
-  - https://github.com/your-repo/ecommerce-microservice-springboot
+  - https://github.com/phu-phurithat/ecommerce-microservice-springboot/
 keywords:
   - springboot
   - microservices
