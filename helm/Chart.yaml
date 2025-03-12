@@ -6,7 +6,7 @@ appVersion: "1.0"
 maintainers:
   - name: Phu
     email: phurithat.komkham@gmail.com
-    home: https://github.com/phu-phurithat/ecommerce-microservice-springboot/
+home: https://github.com/phu-phurithat/ecommerce-microservice-springboot/
 sources:
   - https://github.com/phu-phurithat/ecommerce-microservice-springboot/
 keywords:
