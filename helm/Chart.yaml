@@ -25,7 +25,7 @@ dependencies:
   - name: gateway
     version: 0.1.0
     repository: "file://charts/gateway"
-  - name: customer-server
+  - name: customer-service
     version: 0.1.0
     repository: "file://charts/customer-service"
   - name: product-service
