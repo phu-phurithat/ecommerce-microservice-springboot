@@ -1,0 +1,4 @@
+apiVersion: v2
+name: payment-service
+description: A Helm chart for deploying the payment-service service
+version: 0.1.0

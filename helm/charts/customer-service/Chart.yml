@@ -1,0 +1,4 @@
+apiVersion: v2
+name: customer-service
+description: A Helm chart for deploying the customer-service service
+version: 0.1.0

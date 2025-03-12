@@ -1,0 +1,6 @@
+replicaCount: 1
+image:
+  repository: phuphurithat/ecommerce
+  tag: customer-service
+service:
+  port: 0

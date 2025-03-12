@@ -1,0 +1,4 @@
+apiVersion: v2
+name: notification-service
+description: A Helm chart for deploying the notification-service service
+version: 0.1.0

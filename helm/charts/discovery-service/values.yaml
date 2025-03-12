@@ -1,0 +1,6 @@
+replicaCount: 1
+image:
+  repository: phuphurithat/ecommerce
+  tag: discovery-service
+service:
+  port: 8761

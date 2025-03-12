@@ -1,0 +1,4 @@
+apiVersion: v2
+name: gateway
+description: A Helm chart for deploying the gateway service
+version: 0.1.0

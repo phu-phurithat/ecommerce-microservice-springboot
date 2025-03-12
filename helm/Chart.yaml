@@ -19,24 +19,24 @@ dependencies:
   - name: config-server
     version: 0.1.0
     repository: "file://charts/config-server"
-  # - name: discovery-service
-  #   version: 0.1.0
-  #   repository: "file://charts/discovery-service"
-  # - name: gateway
-  #   version: 0.1.0
-  #   repository: "file://charts/gateway"
-  # - name: customer-server
-  #   version: 0.1.0
-  #   repository: "file://charts/customer-server"
-  # - name: product-service
-  #   version: 0.1.0
-  #   repository: "file://charts/product-service"
-  # - name: order-service
-  #   version: 0.1.0
-  #   repository: "file://charts/order-service"
-  # - name: payment-service
-  #   version: 0.1.0
-  #   repository: "file://charts/payment-service"
-  # - name: notification-service
-  #   version: 0.1.0
-  #   repository: "file://charts/notification-service"
+  - name: discovery-service
+    version: 0.1.0
+    repository: "file://charts/discovery-service"
+  - name: gateway
+    version: 0.1.0
+    repository: "file://charts/gateway"
+  - name: customer-server
+    version: 0.1.0
+    repository: "file://charts/customer-server"
+  - name: product-service
+    version: 0.1.0
+    repository: "file://charts/product-service"
+  - name: order-service
+    version: 0.1.0
+    repository: "file://charts/order-service"
+  - name: payment-service
+    version: 0.1.0
+    repository: "file://charts/payment-service"
+  - name: notification-service
+    version: 0.1.0
+    repository: "file://charts/notification-service"
