@@ -27,37 +27,27 @@ customer-service:
   image:
     repository: phuphurithat/ecommerce
     tag: "customer-service"
-  service:
-    port: 0
 
 product-service:
   replicaCount: 1
   image:
     repository: phuphurithat/ecommerce
     tag: "product-service"
-  service:
-    port: 0
 
 order-service:
   replicaCount: 1
   image:
     repository: phuphurithat/ecommerce
     tag: "order-service"
-  service:
-    port: 0
 
 payment-service:
   replicaCount: 1
   image:
     repository: phuphurithat/ecommerce
     tag: "payment-service"
-  service:
-    port: 0
 
 notification-service:
   replicaCount: 1
   image:
     repository: phuphurithat/ecommerce
     tag: "notification-service"
-  service:
-    port: 0
