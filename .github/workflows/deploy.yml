@@ -31,4 +31,4 @@ jobs:
       - name: Deploy using Helm
         uses: WyriHaximus/github-action-helm3@v3
         with:
-          exec: helm upgrade --install ecommerce-backend ./helm --namespace ecommerce --create-namespace
+          exec: helm upgrade --install ecommerce-backend ./helm --namespace ecommerce
