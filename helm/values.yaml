@@ -5,3 +5,59 @@ config-server:
     tag: "config-server"
   service:
     port: 8888
+
+discovery-service:
+  replicaCount: 1
+  image:
+    repository: phuphurithat/ecommerce
+    tag: "discovery-service"
+  service:
+    port: 8761
+
+gateway:
+  replicaCount: 1
+  image:
+    repository: phuphurithat/ecommerce
+    tag: "gateway"
+  service:
+    port: 8222
+
+customer-service:
+  replicaCount: 1
+  image:
+    repository: phuphurithat/ecommerce
+    tag: "customer-service"
+  service:
+    port: 0
+
+product-service:
+  replicaCount: 1
+  image:
+    repository: phuphurithat/ecommerce
+    tag: "product-service"
+  service:
+    port: 0
+
+order-service:
+  replicaCount: 1
+  image:
+    repository: phuphurithat/ecommerce
+    tag: "order-service"
+  service:
+    port: 0
+
+payment-service:
+  replicaCount: 1
+  image:
+    repository: phuphurithat/ecommerce
+    tag: "payment-service"
+  service:
+    port: 0
+
+notification-service:
+  replicaCount: 1
+  image:
+    repository: phuphurithat/ecommerce
+    tag: "notification-service"
+  service:
+    port: 0
