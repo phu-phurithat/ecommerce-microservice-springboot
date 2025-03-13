@@ -30,6 +30,8 @@ spec:
 
         - name: customer-service
           image: {{ .Values.containers.customer-service.image }}
+          ports:
+            - containerPort: {{ .Values.containers.customer-service.port }}
 
         - name: product-service
           image: {{ .Values.containers.product-service.image }}

@@ -8,5 +8,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80 # Exposed port for the service
-      targetPort: 8222 # Target port in the container (gateway service in this case)
-  type: LoadBalancer
+      targetPort: 8090 # Target port in the container (gateway service in this case)
+  type: LoadBalancer # Expose the service outside the cluster

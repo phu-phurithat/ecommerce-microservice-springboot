@@ -3,12 +3,10 @@ spring:
     name: customer-service
   data:
     mongodb:
-      host: localhost
-      port: 27017
-      username: root
-      password: root
-      database: customer
+      uri: mongodb://customer-db-mongodb:27017/customer_db # Kubernetes DNS
+      username: customer_user
+      password: customer_pass
       authentication-database: admin
 
 server:
-  port: 0
+  port: 8090

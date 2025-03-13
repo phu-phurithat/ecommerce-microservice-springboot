@@ -15,6 +15,7 @@ containers:
 
   customer-service:
     image: phuphurithat/ecommerce:customer-service
+    port: 8090
 
   product-service:
     image: phuphurithat/ecommerce:product-service
@@ -35,3 +36,20 @@ containers:
   config-server:
     image: phuphurithat/ecommerce:config-server
     port: 8888
+
+databases:
+  customer:
+    enabled: true
+    mongodb:
+      auth:
+        username: customer_user
+        password: customer_pass
+        database: customer_db
+
+messaging:
+  kafka:
+    enabled: true
+
+tracing:
+  zipkin:
+    enabled: true
