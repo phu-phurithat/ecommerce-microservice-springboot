@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multi-service-pod
+spec:
+  replicas: { { .Values.replicaCount } }
+  selector:
+    matchLabels:
+      app: multi-service-pod
+  template:
+    metadata:
+      labels:
+        app: multi-service-pod
+    spec:
+      initContainers:
+        - name: wait-for-config-server
+          image: busybox # Lightweight image to check readiness
+          command:
+            [
+              "sh",
+              "-c",
+              "until nc -z config-server 8888; do echo waiting for config server; sleep 5; done;",
+            ]
+
+      containers:
+        - name: gateway
+          image: { { .Values.containers.gateway.image } }
+          ports:
+            - containerPort: { { .Values.containers.gateway.port } }
+
+        - name: customer-service
+          image: { { .Values.containers.customer-service.image } }
+
+        - name: product-service
+          image: { { .Values.containers.product-service.image } }
+
+        - name: order-service
+          image: { { .Values.containers.order-service.image } }
+
+        - name: payment-service
+          image: { { .Values.containers.payment-service.image } }
+
+        - name: notification-service
+          image: { { .Values.containers.notification-service.image } }
+
+        - name: discovery-service
+          image: { { .Values.containers.discovery-service.image } }
+          ports:
+            - containerPort: { { .Values.containers.discovery-service.port } }
+
+        - name: config-server
+          image: { { .Values.containers.config-server.image } }
+          ports:
+            - containerPort: { { .Values.containers.config-server.port } }
