@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: multi-service-pod
 spec:
-  replicas: { { .Values.replicaCount } }
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: multi-service-pod
@@ -24,31 +24,31 @@ spec:
 
       containers:
         - name: gateway
-          image: { { .Values.containers.gateway.image } }
+          image: {{ .Values.containers.gateway.image }}
           ports:
-            - containerPort: { { .Values.containers.gateway.port } }
+            - containerPort: {{ .Values.containers.gateway.port }}
 
         - name: customer-service
-          image: { { .Values.containers.customer-service.image } }
+          image: {{ .Values.containers.customer-service.image }}
 
         - name: product-service
-          image: { { .Values.containers.product-service.image } }
+          image: {{ .Values.containers.product-service.image }}
 
         - name: order-service
-          image: { { .Values.containers.order-service.image } }
+          image: {{ .Values.containers.order-service.image }}
 
         - name: payment-service
-          image: { { .Values.containers.payment-service.image } }
+          image: {{ .Values.containers.payment-service.image }}
 
         - name: notification-service
-          image: { { .Values.containers.notification-service.image } }
+          image: {{ .Values.containers.notification-service.image }}
 
         - name: discovery-service
-          image: { { .Values.containers.discovery-service.image } }
+          image: {{ .Values.containers.discovery-service.image }}
           ports:
-            - containerPort: { { .Values.containers.discovery-service.port } }
+            - containerPort: {{ .Values.containers.discovery-service.port }}
 
         - name: config-server
-          image: { { .Values.containers.config-server.image } }
+          image: {{ .Values.containers.config-server.image }}
           ports:
-            - containerPort: { { .Values.containers.config-server.port } }
+            - containerPort: {{ .Values.containers.config-server.port }}
