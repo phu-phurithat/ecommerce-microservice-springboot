@@ -12,13 +12,17 @@ spec:
       labels:
         app: multi-service-pod
     spec:
-      initContainers:
+      containers:
         - name: config-server
           image: {{ .Values.containers.config_server.image }}
           ports:
             - containerPort: {{ .Values.containers.config_server.port }}
+            
+        - name: discovery-service
+          image: {{ .Values.containers.discovery_service.image }}
+          ports:
+            - containerPort: {{ .Values.containers.discovery_service.port }}
 
-      containers:
         - name: gateway
           image: {{ .Values.containers.gateway.image }}
           ports:
@@ -41,9 +45,5 @@ spec:
         - name: notification-service
           image: {{ .Values.containers.notification_service.image }}
 
-        - name: discovery-service
-          image: {{ .Values.containers.discovery_service.image }}
-          ports:
-            - containerPort: {{ .Values.containers.discovery_service.port }}
 
-        
+          
