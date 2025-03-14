@@ -28,29 +28,29 @@ spec:
           ports:
             - containerPort: {{ .Values.containers.gateway.port }}
 
-        - name: customer-service
+        - name: customer_service
           image: {{ .Values.containers.customer_service.image }}
           ports:
             - containerPort: {{ .Values.containers.customer_service.port }}
 
-        - name: product-service
+        - name: product_service
           image: {{ .Values.containers.product_service.image }}
 
-        - name: order-service
+        - name: order_service
           image: {{ .Values.containers.order_service.image }}
 
-        - name: payment-service
+        - name: payment_service
           image: {{ .Values.containers.payment_service.image }}
 
-        - name: notification-service
+        - name: notification_service
           image: {{ .Values.containers.notification_service.image }}
 
-        - name: discovery-service
+        - name: discovery_service
           image: {{ .Values.containers.discovery_service.image }}
           ports:
             - containerPort: {{ .Values.containers.discovery_service.port }}
 
-        - name: config-server
+        - name: config_server
           image: {{ .Values.containers.config_server.image }}
           ports:
             - containerPort: {{ .Values.containers.config_server.port }}
