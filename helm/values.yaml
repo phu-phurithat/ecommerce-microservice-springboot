@@ -13,28 +13,28 @@ containers:
     image: phuphurithat/ecommerce:gateway
     port: 8222
 
-  customer-service:
-    image: phuphurithat/ecommerce:customer_service
+  customer_service:
+    image: phuphurithat/ecommerce:customer-service
     port: 8090
 
-  product-service:
-    image: phuphurithat/ecommerce:product_service
+  product_service:
+    image: phuphurithat/ecommerce:product-service
 
-  order-service:
-    image: phuphurithat/ecommerce:order_service
+  order_service:
+    image: phuphurithat/ecommerce:order-service
 
-  payment-service:
-    image: phuphurithat/ecommerce:payment_service
+  payment_service:
+    image: phuphurithat/ecommerce:payment-service
 
-  notification-service:
-    image: phuphurithat/ecommerce:notification_service
+  notification_service:
+    image: phuphurithat/ecommerce:notification-service
 
-  discovery-service:
-    image: phuphurithat/ecommerce:discovery_service
+  discovery_service:
+    image: phuphurithat/ecommerce:discovery-service
     port: 8761
 
-  config-server:
-    image: phuphurithat/ecommerce:config_server
+  config_server:
+    image: phuphurithat/ecommerce:config-server
     port: 8888
 
 databases:

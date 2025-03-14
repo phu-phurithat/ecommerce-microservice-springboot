@@ -31,7 +31,7 @@ spec:
         - name: customer-service
           image: {{ .Values.containers.customer_service.image }}
           ports:
-            - containerPort: {{ .Values.containers.customer-service.port }}
+            - containerPort: {{ .Values.containers.customer_service.port }}
 
         - name: product-service
           image: {{ .Values.containers.product_service.image }}
@@ -48,9 +48,9 @@ spec:
         - name: discovery-service
           image: {{ .Values.containers.discovery_service.image }}
           ports:
-            - containerPort: {{ .Values.containers.discovery-service.port }}
+            - containerPort: {{ .Values.containers.discovery_service.port }}
 
         - name: config-server
           image: {{ .Values.containers.config_server.image }}
           ports:
-            - containerPort: {{ .Values.containers.config-server.port }}
+            - containerPort: {{ .Values.containers.config_server.port }}
