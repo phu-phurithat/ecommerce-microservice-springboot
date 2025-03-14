@@ -13,14 +13,10 @@ spec:
         app: multi-service-pod
     spec:
       initContainers:
-        - name: wait-for-config-server
-          image: busybox # Lightweight image to check readiness
-          command:
-            [
-              "sh",
-              "-c",
-              "until nc -z config-server 8888; do echo waiting for config server; sleep 5; done;",
-            ]
+        - name: config-server
+          image: {{ .Values.containers.config_server.image }}
+          ports:
+            - containerPort: {{ .Values.containers.config_server.port }}
 
       containers:
         - name: gateway
@@ -50,7 +46,4 @@ spec:
           ports:
             - containerPort: {{ .Values.containers.discovery_service.port }}
 
-        - name: config-server
-          image: {{ .Values.containers.config_server.image }}
-          ports:
-            - containerPort: {{ .Values.containers.config_server.port }}
+        
