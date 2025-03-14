@@ -19,7 +19,7 @@ spec:
             [
               "sh",
               "-c",
-              "until nc -z config_server 8888; do echo waiting for config server; sleep 5; done;",
+              "until nc -z config-server 8888; do echo waiting for config server; sleep 5; done;",
             ]
 
       containers:
@@ -28,29 +28,29 @@ spec:
           ports:
             - containerPort: {{ .Values.containers.gateway.port }}
 
-        - name: customer_service
+        - name: customer-service
           image: {{ .Values.containers.customer_service.image }}
           ports:
             - containerPort: {{ .Values.containers.customer_service.port }}
 
-        - name: product_service
+        - name: product-service
           image: {{ .Values.containers.product_service.image }}
 
-        - name: order_service
+        - name: order-service
           image: {{ .Values.containers.order_service.image }}
 
-        - name: payment_service
+        - name: payment-service
           image: {{ .Values.containers.payment_service.image }}
 
-        - name: notification_service
+        - name: notification-service
           image: {{ .Values.containers.notification_service.image }}
 
-        - name: discovery_service
+        - name: discovery-service
           image: {{ .Values.containers.discovery_service.image }}
           ports:
             - containerPort: {{ .Values.containers.discovery_service.port }}
 
-        - name: config_server
+        - name: config-server
           image: {{ .Values.containers.config_server.image }}
           ports:
             - containerPort: {{ .Values.containers.config_server.port }}
