@@ -28,21 +28,15 @@ jobs:
         run: |
           aws eks update-kubeconfig --name ${{ secrets.EKS_CLUSTER_NAME }} --region ${{ secrets.AWS_REGION }}
 
-      - name: Set up Helm
+      - name: Helm Setup & Deployment" (Simplified)
         uses: WyriHaximus/github-action-helm3@v3
         with:
-          exec: helm update dependencies ./helm
-
-      - name: Helm Lint
-        uses: WyriHaximus/github-action-helm3@v3
-        with:
-          exec: helm dependency update ./helm
-
-      - name: Deploy using Helm
-        uses: WyriHaximus/github-action-helm3@v3
-        with:
-          exec: helm upgrade --install ecommerce-backend ./helm --namespace ecommerce --create-namespace
+          exec: |
+            helm dependency update ./helm
+            helm lint ./helm
+            helm upgrade --install my-release ./helm --namespace ecommerce --create-namespace
 
       - name: Verify Deployment
         run: |
-          kubectl get pods  #check the status of the pods
+          kubectl get pods -n ecommerce
+          kubectl get services -n ecommerce
