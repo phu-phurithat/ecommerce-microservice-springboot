@@ -5,10 +5,24 @@ type: application
 version: 0.1.0
 appVersion: "1.0"
 dependencies:
-  # - name: mysql
-  #   version: "9.10.1"
-  #   repository: "https://charts.bitnami.com/bitnami"
-  #   condition: databases.mysql.enabled
+
+  - name: mysql
+    version: "9.10.1"
+    repository: "https://charts.bitnami.com/bitnami"
+    alias: product-db
+    condition: databases.mysql.enabled
+
+  - name: mysql
+    version: "9.10.1"
+    repository: "https://charts.bitnami.com/bitnami"
+    alias: payment-db
+    condition: databases.mysql.enabled
+
+  - name: mysql
+    version: "9.10.1"
+    repository: "https://charts.bitnami.com/bitnami"
+    alias: order-db
+    condition: databases.mysql.enabled
 
   - name: mongodb
     version: "13.6.4"
@@ -16,12 +30,22 @@ dependencies:
     alias: customer-db
     condition: databases.mongodb.enabled
 
-  # - name: kafka
-  #   version: "24.0.2"
-  #   repository: "https://charts.bitnami.com/bitnami"
-  #   condition: messaging.kafka.enabled
+  - name: mongodb
+    version: "13.6.4"
+    repository: "https://charts.bitnami.com/bitnami"
+    alias: notification-db
+    condition: databases.mongodb.enabled
 
-  # - name: zipkin
-  #   version: "0.1.0"
-  #   repository: "https://openzipkin.github.io/zipkin"
-  #   condition: tracing.zipkin.enabled
+  - name: kafka
+    version: "24.0.2"
+    repository: "https://charts.bitnami.com/bitnami"
+    condition: messaging.kafka.enabled
+
+  - name: zipkin
+    version: "0.1.0"
+    repository: "https://openzipkin.github.io/zipkin"
+    condition: tracing.zipkin.enabled
+
+  - name: config-server
+    version: 0.1.0
+    repository: "file://charts/config-server"

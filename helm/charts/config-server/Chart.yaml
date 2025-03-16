@@ -1,0 +1,4 @@
+apiVersion: v2
+name: config-server
+description: A Helm chart for deploying the config-server service
+version: 0.1.0

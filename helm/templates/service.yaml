@@ -8,16 +8,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80 # Exposed port for the service
-      targetPort: 8090 # Target port in the container (gateway service in this case)
+      targetPort: 8222 # Target port in the container (gateway service in this case)
   type: LoadBalancer # Expose the service outside the cluster
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: config-server
-spec:
-  selector:
-    app: config-server
-  ports:
-    - port: 8888
-      targetPort: 8888

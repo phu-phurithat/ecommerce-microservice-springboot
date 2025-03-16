@@ -33,18 +33,42 @@ containers:
     image: phuphurithat/ecommerce:discovery-service
     port: 8761
 
-  config_server:
-    image: phuphurithat/ecommerce:config-server
-    port: 8888
-
 databases:
-  customer:
+  mysql:
     enabled: true
-    mongodb:
-      auth:
-        username: customer_user
-        password: customer_pass
-        database: customer_db
+    product:
+      enabled: true
+      rootPassword: root
+      database: product_db
+      user: product_user
+      password: product_pass
+    payment:
+      enabled: true
+      rootPassword: root
+      database: payment_db
+      user: payment_user
+      password: payment_pass
+    order:
+      enabled: true
+      rootPassword: root
+      database: order_db
+      user: order_user
+      password: order_pass
+
+  mongodb:
+    enabled: true # Set to true to enable MongoDB databases
+    customer:
+      enabled: true
+      rootPassword: root
+      database: customer_db
+      user: customer_user
+      password: customer_pass
+    notification:
+      enabled: true
+      rootPassword: root
+      database: notification_db
+      user: notification_user
+      password: notification_pass
 
 messaging:
   kafka:

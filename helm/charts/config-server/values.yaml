@@ -1,0 +1,6 @@
+replicaCount: 1
+image:
+  repository: phuphurithat/ecommerce
+  tag: config-server
+service:
+  port: 8888
