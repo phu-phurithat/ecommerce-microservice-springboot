@@ -42,7 +42,6 @@ dependencies:
     condition: messaging.kafka.enabled
 
   - name: zipkin
-    version: "3.5.0"
     repository: "https://openzipkin.github.io/zipkin"
     condition: tracing.zipkin.enabled
 
