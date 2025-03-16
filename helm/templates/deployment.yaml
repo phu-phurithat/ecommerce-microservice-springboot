@@ -12,6 +12,10 @@ spec:
       labels:
         app: multi-service-pod
     spec:
+      initContainers:
+        - name: wait-for-config-server
+          image: busybox
+          command: [ 'sh', '-c', 'until nc -z config-server 8888; do echo waiting for config-server; sleep 3; done;' ]
       containers:
         - name: config-server
           image: {{ .Values.containers.config_server.image }}
